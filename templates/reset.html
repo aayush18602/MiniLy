@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body %}
+<div style="margin-top: 80px;">
+    <h1>Enter new password</h1>
+    <div>Please enter your new password twice so we can verify you typed it in correctly.</div>
+    </div>
+    <div class="sign-container lgn rst1">
+        <div class="sign-head">
+            <i class="fas fa-user"></i>
+            <header>ENTER NEW PASSWORD</header>
+        </div>
+        <div class="sign-body">
+            <form action="" method="POST" class="form-full">
+                {% csrf_token %}
+                {{form}}
+                <input type="submit" class="form-bx fx btnm" value="Reset">
+            </form>
+        </div>
+    </div>
+{% endblock %}

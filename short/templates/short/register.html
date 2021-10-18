@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="sign-container whole" id="wh-1">
+    <div class="sign-head">
+        <i class="fas fa-user"></i>
+        <header>REGISTER</header>
+    </div>
+    <div class="sign-body">
+        <form action="" method="POST" class="form-full">
+            {% csrf_token %}
+            <input type="text" name="username" autocomplete="off" class="form-bx" placeholder="Enter your username" required>
+            <input type="email" name="email"  class="form-bx fx" placeholder="Enter your Email" required>
+            <input type="password" name="password1" class="form-bx fx" placeholder="Create a password" required>
+            <input type="password" name="password2" class="form-bx fx" placeholder="Re-enter your password" required>
+            <input type="submit" class="form-bx fx btnm" value="REGISTER">
+        </form>
+        <div class="already">Already have a account? &nbsp; <a href="{% url 'login' %}">Login</a></div>
+    </div>
+</div>
+{% endblock %}

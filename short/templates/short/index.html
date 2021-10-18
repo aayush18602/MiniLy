@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="start-page whole" id="wh-1">
+    <div class="start-head">
+        <div class="head-left">
+            <h1>Smaller Links, Smaller hassles</h1>
+            <div class="left_small">
+                A tool which can provide you a shorter link with option of adding your own custom names
+            </div>
+        </div>
+        <div class="start-img">
+            <img src="/static/images/url_bar.jpg" alt="urlbar">
+        </div>
+    </div>
+    <div class="about-mini" id="about-minily">
+        <div class="about-head">
+            <h1>About Us</h1>
+        </div>
+        <div class="about-data">
+            MiniLy is a URL Shortner. It provides you the feature of shortening your URL by words of your choice. This will help people to share the links without the hassle of your link size. MiniLy is still in its initial phase. We are constantly trying to upgrade with the new facilities. MiniLy also provides MiniTree. MiniTree acts as a single link for all of your inportant links. You can connect with each other through this single link. 
+        </div>
+    </div>
+    <div class="generate">
+        <div class="generate-left">
+            Try MiniLy, I bet you won't regret
+        </div>
+        <div class="generate-right">
+            <a href="{% url 'dashboard' %}" class="right r-1">
+                <div class="rr1">Shortening</div>
+            </a>
+            <a href="{% url 'index' %}" class="right r-2">
+                <div class="rr2">MiniTree</div>
+            </a>
+        </div>
+    </div>
+    <footer>
+        <div class="contact-us">
+            <div class="contact-head">
+                <h1>Contact Us</h1>
+            </div>
+            <div class="contact-body">
+                <div class="mail">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:aayushpandey18602@gmail.com">aayushpandey18602@gmail.com</a>
+                </div>
+                <div class="ig">
+                    <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/aaayussshhh_/">Aayush</a>
+                </div>
+                <div class="ldk">
+                    <i class="fab fa-linkedin-in"></i>
+                    <a href="https://www.linkedin.com/in/aayush-pandey-b6b349210/">Aayush</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+{% endblock %}

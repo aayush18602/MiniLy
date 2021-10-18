@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="tree-dash whole" id="wh-1">
+    <div class="form-content">
+        <div class="form-head">
+            <h1>Create Your MiniTree</h1>
+        </div>
+        <div class="form-body">
+            <form action="{% url 'create' %}" method="post">
+                {% csrf_token %}
+                <input type="url" name="URL" id="og" placeholder="Link or URL" required> <br>
+                <div class="form-short">
+                    <input type="text" name="Treename" id="s2" maxlength="30" placeholder="Name" required> <br>
+                    <input type="submit" value="Create" id="sub-dash">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="tree-head">
+        <h1>Your MiniTree</h1>
+    </div>
+    <div class="tree-link">
+        <a href="{% url 'treelink' user %}" target="_blank">http://localhost:8000/{{user}}</a>
+    </div>
+    <div class="tree-content">
+        <div class="tree-data">
+            {% for element in elements %}
+            <div class="single-mly tree-mly">
+                <div class="s1-mly">  
+                <div class="mly-name">
+                    {{element.short_name}}
+                </div>
+                <div class="mly-btn">
+                    <a href="{% url 'editree' element.id%}" class="l-btn1 tr">
+                        <div class="s-btn1">Edit</div>
+                    </a>
+                    <a href="{% url 'deletree' element.id%}" class="l-btn2 tr">
+                        <div class="s-btn2">Delete</div>
+                    </a>
+                </div>
+                </div>
+            </div> 
+            {% endfor %}
+        </div>
+        
+        <div class="tree-overview">
+            <div class="overview-head">
+                <h1>Overview</h1>
+            </div>
+            <div class="overview-content">
+                <div class="tree-user">
+                    <h4>@{{user}}</h4>
+                </div>
+                <div class="tree-cnt">
+                    {% for element in elements %}
+                    <a href="{{element.original_link}}" target="_blank">
+                    <div class="sig-tr-ele">
+                        <h3>{{element.short_name}}</h3>
+                    </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <h1>Your MiniTrees</h1>
+{% for element in elements %}
+{{element.short_name}}
+{% endfor %} -->
+{% endblock %}

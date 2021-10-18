@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="dash-container whole" id="wh-1">
+        <div class="form-content">
+            <div class="form-head">
+                <h1>Create Your MiniLy</h1>
+            </div>
+            <div class="form-body">
+                <form action="{% url 'generate' %}" method="post">
+                    {% csrf_token %}
+                    <input type="url" name="original" id="og" placeholder="Link or URL" required> <br>
+                    <div class="form-short">
+                        <input type="text" name="short" id="s2" maxlength="15" placeholder="Short Name of Maxlength 15"> <br>
+                        <input type="submit" value="Generate" id="sub-dash">
+                    </div>
+                    <p>(Short name left Blank will generate random name of length 7)</p>
+                </form>
+            </div>
+        </div>
+        <div class="dash-midhead">
+            <h1>Your MiniLyees</h1>
+        </div>
+        <div class="allmly">
+            {% for u in urls %}
+            <div class="single-mly">
+                <div class="s1-mly">
+                    <a href="http://localhost:8000/{{u.short_name}}" class="nameref">
+                <div class="mly-name mly-name1">
+                    {{u.short_name}}
+                </div>
+                </a>
+                <div class="visit-check">
+                    <div class="visit-head visit-head1">
+                        Total Visits
+                    </div>
+                    <div class="visit-no visit-no1">
+                        {{u.visit_no}}
+                    </div>
+                </div>
+                <div class="mly-btn">
+                    <a href="{% url 'editly' u.id%}" class="l-btn1">
+                        <div class="s-btn1 s-btn11">Edit</div>
+                    </a>
+                    <a href="{% url 'deletely' u.id%}" class="l-btn2">
+                        <div class="s-btn2 s-btn22">Delete</div>
+                    </a>
+                </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+</div>
+{% endblock %}

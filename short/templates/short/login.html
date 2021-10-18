@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="sign-container lgn whole" id="wh-1">
+    <div class="sign-head">
+        <i class="fas fa-user"></i>
+        <header>LOGIN</header>
+    </div>
+    <div class="sign-body">
+        <form action="" method="POST" class="form-full">
+            {% csrf_token %}
+            <input type="text" name="username" autocomplete="off" class="form-bx" placeholder="Enter your username" required>
+            <input type="password" name="password" class="form-bx fx" placeholder="Enter your password" required>
+            <input type="hidden" name="next" value="{{ request.GET.next }}">
+            <input type="submit" class="form-bx fx btnm" value="LOGIN">
+        </form>
+        <div class="log-foot">
+        <div class="already">New to this? &nbsp; <a href="{% url 'register' %}">Register</a></div>
+        <div class="forgot already"><a href="{% url 'reset_password' %}">Forgot Password</a></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

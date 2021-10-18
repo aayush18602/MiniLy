@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="dash-container whole" id="wh-1">
+    <div class="form-content">
+        <div class="form-head">
+            <h1>Edit Your MiniLy</h1>
+        </div>
+        <div class="form-body">
+            <form action="{% url 'editly' id %}" method="post">
+                {% csrf_token %}
+                <input type="url" name="original" id="og" placeholder="Link or URL" value="{{original}}" required> <br>
+                <div class="form-short">
+                    <input type="text" name="short" id="s2" maxlength="15" placeholder="Short Name of Maxlength 15" value="{{shorty}}"> <br>
+                    <input type="submit" value="Save" id="sub-dash">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

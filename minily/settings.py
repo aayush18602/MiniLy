@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-nilh%oy$^l6it0ds34gu7zs-s-yp1^k!gfa(p(tb@us63jjaim'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1','localhost','minily.herokuapp.com']
 
 
@@ -158,3 +158,5 @@ EMAIL_USE_TLS= True
 EMAIL_HOST_USER = 'aayushpandey18602@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('EM_18602_PS')
 
+if os.getcwd() == '/app':
+    DEBUG = False 

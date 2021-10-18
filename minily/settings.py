@@ -160,5 +160,3 @@ EMAIL_USE_TLS= True
 EMAIL_HOST_USER = 'aayushpandey18602@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('EM_18602_PS')
 
-if os.getcwd() == '/app':
-    DEBUG = False

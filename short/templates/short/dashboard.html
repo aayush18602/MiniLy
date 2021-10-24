@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block title %}
+Dashboard | MiniLy
+{% endblock %}
 {% block body %}
 <div class="dash-container whole" id="wh-1">
         <div class="form-content">
@@ -23,8 +26,9 @@
         <div class="allmly">
             {% for u in urls %}
             <div class="single-mly">
+                <div class="upper-single">
                 <div class="s1-mly">
-                    <a href="https://minily.in/{{u.short_name}}" class="nameref">
+                    <a href="https://minily.in/{{u.short_name}}" class="nameref" target="_blank">
                 <div class="mly-name mly-name1">
                     {{u.short_name}}
                 </div>
@@ -45,6 +49,11 @@
                         <div class="s-btn2 s-btn22">Delete</div>
                     </a>
                 </div>
+                </div>
+                </div>
+                <div class="lower-single">
+                    <a href="https://minily.in/{{u.short_name}}" target="_blank" id="cplink"><div id="text">https://minily.in/{{u.short_name}}</div></a>
+                    <button class="c-btn1" id="copy-text-btn">Copy</button>
                 </div>
             </div>
             {% endfor %}

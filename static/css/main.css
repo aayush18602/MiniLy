@@ -124,6 +124,9 @@ nav .menu-btn i{
     border: none;
     outline: none;
 }
+.rd-br{
+    outline: none;
+}
 .form-full{
     padding: 20px;
     margin-left: 25px;
@@ -704,5 +707,40 @@ footer a{
     }
     #id_new_password2{
         width: 80%;
+    }
+}
+
+.lower-single{
+    margin: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.lower-single a{
+    color: white;
+    margin-left: 20px;
+}
+.lower-single button{
+    padding: 5px;
+    margin-right: 30px;
+    border: none;
+    background-color: blue;
+    color: white;
+}
+.lower-single button:hover{
+    background-color: rgb(104, 104, 250);
+}
+.c-btn1{
+    width: 28%;
+}
+@media (max-width:840px) {
+    .c-btn1{
+        width: 14%;
+    }
+    .lower-single a div{
+        font-size: 11px;
+    }
+    .lower-single button{
+        font-size: 11px;
     }
 }

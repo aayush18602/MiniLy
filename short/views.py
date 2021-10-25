@@ -190,7 +190,11 @@ def edit_minily(request,no):
             messages.error(request,"Please fill in the value of Original URL")
             return redirect('/dashboard/')
     else:
-        check = shorturl.objects.get(id=no)
+        try:
+            check = shorturl.objects.get(id=no)
+        except shorturl.DoesNotExist:
+            messages.error(request,"Not Found")
+            return redirect('/dashboard/')
         if request.user!=check.user:
             messages.error(request,"Access denied")
             return redirect('/dashboard/')
@@ -204,7 +208,11 @@ def edit_minily(request,no):
 
 @login_required(login_url="/login/")
 def deletely(request,no):
-    check = shorturl.objects.get(id=no)
+    try:
+        check = shorturl.objects.get(id=no)
+    except shorturl.DoesNotExist:
+        messages.error(request,"Not Found")
+        return redirect('/dashboard/')
     if request.user!=check.user:
         messages.error(request,"Access denied")
         return redirect('/dashboard/')

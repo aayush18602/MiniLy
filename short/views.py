@@ -138,7 +138,7 @@ def generate(request):
                 messages.success(request,"MiniLy created Successfully")
                 return redirect('/dashboard/')
             else:
-                messages.error(request, "Already exists")
+                messages.error(request, "ShortName Already exists")
                 return redirect('/dashboard/')
         elif request.POST['original']:
             usr=request.user
